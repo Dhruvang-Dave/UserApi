@@ -24,6 +24,7 @@ Route::get('/postman/csrf', function (Request $request) {
 	return csrf_token();
 });
 
+
 Route::get('/delete/{id}', [UserController::class , 'delete'])->middleware('admin');
 
 Route::get('/update/{id}', [UserController::class , 'update']);
