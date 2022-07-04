@@ -26,7 +26,7 @@ Route::get('/postman/csrf', function (Request $request) {
 
 Route::get('/delete/{id}', [UserController::class , 'delete'])->middleware('admin');
 
-Route::get('/update/{id}', [UserController::class , 'update']);
+Route::get('/update/{id}', [UserController::class , 'update'])->middleware('admin');
 
 Route::get('/sessions' , [SessionsController::class , 'store']);
 
@@ -34,7 +34,7 @@ Route::get('/all', [UserController::class , 'all'])->middleware('admin');
 
 // Route::get('/register', [RegisterController::class , 'create']);
 
-Route::get('/register', [RegisterController::class , 'store']); //->middleware('guest')
+Route::get('/register', [RegisterController::class , 'store'])->middleware('guest');
 
 Route::get('/logout' , [SessionsController::class , 'destroy'])->middleware('auth');
 

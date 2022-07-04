@@ -31,9 +31,10 @@ class UserController extends Controller
         $user = User::find($id);
         // dd($user);
         $user->firstname = $request->firstname;
-        $user->lastname = $request->astname;
+        $user->lastname = $request->lastname;
+        $user->username = $request->username;
         $user->birthdate = $request->birthdate;
-        $user->phone = $request->lasphonetname;
+        $user->phone = $request->phone;
         $user->password = $request->password;
         $user->isAdmin = $request->isAdmin;
         // return 'okay';
