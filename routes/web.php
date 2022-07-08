@@ -5,6 +5,7 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\CsvController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +42,7 @@ Route::get('/logout' , [SessionsController::class , 'destroy'])->middleware('aut
 Route::get('/login' , [SessionsController::class , 'create'])->middleware('guest');
 
 Route::get('/own-info/{id}' , [UserController::class , 'info']);
+
+Route::get('import-form', [CsvController::class , 'importForm']);
+
+Route::post('import', [CsvController::class , 'import'])->name('country.import');
