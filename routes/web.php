@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/postman/csrf', function (Request $request) {
-	return csrf_token();
+	return csrf_token($request);
 });
 
 Route::get('/delete/{id}', [UserController::class , 'delete'])->middleware('admin');
